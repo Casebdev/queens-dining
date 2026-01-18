@@ -1,0 +1,11 @@
+{
+  "name": "queens-dining",
+  "version": "1.0.0",
+  "description": "A study to access the queens dining hall API.",
+  "main": "q1test.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Alexi and Mark Janoska",
+  "license": "ISC"
+}
