@@ -15,6 +15,7 @@ fetch("https://studentweb.housing.queensu.ca/public/campusDishAPI/campusDishAPI.
    .then(function(result)
       {
 	  if(!result.ok) throw new Error("HTTP error");
+	  console.log(result);
 	  return result.json();
       })
 	  
@@ -22,6 +23,7 @@ fetch("https://studentweb.housing.queensu.ca/public/campusDishAPI/campusDishAPI.
       {
       displayData(data);
 	  })
+	  
    .catch(function(error)
       {
 	  console.log("Fetch error",error);
@@ -46,15 +48,17 @@ for(m=0;m<res.MealPeriods.length;m++)
 
 	for(i=0;i<res.MealPeriods[m].Stations.length;i++)
 	   {
+	   console.log(" ");
 	   console.log("Station-Name: ",res.MealPeriods[m].Stations[i].Name);
 	   
 	   for(j=0;j<res.MealPeriods[0].Stations[i].SubCategories.length;j++)
 		  {
-		  console.log("   SubStation-Name: ",res.MealPeriods[m].Stations[i].SubCategories[j].Name);
+		  //console.log("   SubStation-Name: ",res.MealPeriods[m].Stations[i].SubCategories[j].Name);
 		  
 		  for(k=0;k<res.MealPeriods[0].Stations[i].SubCategories[j].Items.length;k++)
 			{
-			console.log("   Product: ",res.MealPeriods[m].Stations[i].SubCategories[j].Items[k].ProductName);
+			console.log("   "+res.MealPeriods[m].Stations[i].SubCategories[j].Items[k].ProductName);
+			console.log("   TcH:"+res.MealPeriods[m].Stations[i].SubCategories[j].Items[k].TotalCarbohydrates);
 			};
 		  };
 	   };
